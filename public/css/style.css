@@ -1,0 +1,11 @@
+.sampul {
+  width: 80px;
+}
+
+.table > tbody > tr > * {
+  vertical-align: middle;
+}
+
+.sampul-detail {
+  width: 120px;
+}
