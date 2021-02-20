@@ -1,4 +1,6 @@
-<?php namespace Config;
+<?php
+
+namespace Config;
 
 // Create a new instance of our RouteCollection class.
 $routes = Services::routes();
@@ -31,10 +33,21 @@ $routes->setAutoRoute(true);
 // route since we don't have to scan directories.
 // $routes->get('/', 'Home::index');
 $routes->get('/', 'User::index');
+$routes->get('/edit', 'User::edit');
+$routes->get('/user/update/(:num)', 'User::update/$1');
+$routes->get('/delete', 'User::delete', ['filter' => 'role:user']);
 
-$routes->get('/admin', 'Admin::index', ['filter' => 'role:admin']);
+$routes->get('/anime/create', 'Anime::create', ['filter' => 'role:admin']);
+$routes->get('/anime/delete/(:num)', 'Anime::delete', ['filter' => 'role:admin']);
+$routes->get('/anime/edit/(:any)', 'Anime::edit/$1', ['filter' => 'role:admin']);
+$routes->get('/anime/(:any)', 'Anime::detail/$1');
+
+$routes->get('/admin/create', 'Admin::create', ['filter' => 'role:admin']);
+$routes->get('/admin/delete/(:num)', 'Admin::delete/$1', ['filter' => 'role:admin']);
 $routes->get('/admin/index', 'Admin::index', ['filter' => 'role:admin']);
 $routes->get('/admin/(:num)', 'Admin::detail/$1', ['filter' => 'role:admin']);
+$routes->get('/admin', 'Admin::index', ['filter' => 'role:admin']);
+
 
 /**
  * --------------------------------------------------------------------

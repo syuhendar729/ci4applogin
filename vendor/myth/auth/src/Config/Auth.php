@@ -1,4 +1,6 @@
-<?php namespace Myth\Auth\Config;
+<?php
+
+namespace Myth\Auth\Config;
 
 use CodeIgniter\Config\BaseConfig;
 use Myth\Auth\Authentication\LocalAuthenticator;
@@ -252,5 +254,4 @@ class Auth extends BaseConfig
     // in seconds.
     //
     public $resetTime = 3600;
-
 }
