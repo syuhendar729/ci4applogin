@@ -78,7 +78,7 @@ class Anime extends BaseController
         $fileImage = $this->request->getFile('image');
 
         if ($fileImage->getError() == 4) {
-            $namaImage = 'anime.jpg';
+            $namaImage = 'anime.png';
         } else {
             $fileImage->move('img');
             $namaImage = $fileImage->getName();
@@ -103,7 +103,7 @@ class Anime extends BaseController
     public function delete($id)
     {
         $anime = $this->animeModel->find($id);
-        if ($anime['image'] != 'anime.jpg') {
+        if ($anime['image'] != 'anime.png') {
             unlink('img/' . $anime['image']);
         }
 
@@ -161,7 +161,7 @@ class Anime extends BaseController
         if ($fileImage->getError() == 4) {
             $namaImage = $imageLama;
         } else {
-            if ($imageLama != 'anime.jpg') {
+            if ($imageLama != 'anime.png') {
                 unlink('img/' . $imageLama);
             }
             $fileImage->move('img');

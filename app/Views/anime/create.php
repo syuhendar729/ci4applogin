@@ -45,7 +45,7 @@
                 <div class="form-group row">
                     <label for="image" class="col-sm-2 col-form-label">Image :</label>
                     <div class="col-sm-2">
-                        <img src="/img/anime.jpg" class="img-thumbnail img-preview">
+                        <img src="/img/anime.png" class="img-thumbnail img-preview">
                     </div>
                     <div class="col-sm-8">
                         <div class="custom-file">
